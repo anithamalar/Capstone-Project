@@ -46,7 +46,7 @@ non_numeric_amounts = pd.to_numeric(orders['order_amount'], errors='coerce').isn
 # Convert to numeric safely; non-numeric or empty strings become NaN
 deliv_numeric = pd.to_numeric(orders['delivery_minutes'], errors='coerce')
 neg_deliv = (deliv_numeric < 0).sum()
-blank_deliv = orders['delivery_minutes'].apply(lambda x: str(x).strip() == '').sum()
+blank_deliv = orders['delivery_minutes'].apply(lambda x: pd.isna(x) or str(x).strip() == '').sum()
 
 print(f"Orders rows: {total_orders}")
 print(f"Exact duplicate rows: {exact_dupes}")
