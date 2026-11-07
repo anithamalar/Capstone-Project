@@ -39,3 +39,26 @@ python generate_data.py
 * **Distinct raw city spellings**: 24
 * **Distinct non-blank raw gender spellings**: 10
 * **Blank genders**: 30
+
+
+Customer cleaning result
+Missing ages count: 0 (Expected: 0)
+Minimum age: 18.0, Maximum age: 60.0 (Expected: between 18 and 60)
+
+City distribution after cleaning:
+city
+Pune         227
+Delhi        210
+Bengaluru    197
+Chennai      191
+Hyderabad    191
+Mumbai       184
+Name: count, dtype: int64
+
+Gender distribution after cleaning:
+gender
+female     610
+male       560
+unknown     30
+Name: count, dtype: int64
+=================================================================
