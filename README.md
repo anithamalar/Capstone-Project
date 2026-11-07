@@ -24,3 +24,18 @@ pip install -r requirements.txt
 
 # 4. Generate the raw synthetic datasets and policy documents
 python generate_data.py
+
+## Part A
+### Raw Data Audit Summary
+* **orders.csv rows**: 13,084
+* **Exact duplicate rows**: 119
+* **Pending status rows**: 656
+* **Distinct order_id values**: 12,309
+* **Non-numeric order_amount entries**: 120
+* **Negative delivery_minutes**: 106
+* **Blank delivery_minutes**: 2,541
+* **Blank customer ages**: 61
+* **Ages outside 10–100**: 6
+* **Distinct raw city spellings**: 24
+* **Distinct non-blank raw gender spellings**: 10
+* **Blank genders**: 30
