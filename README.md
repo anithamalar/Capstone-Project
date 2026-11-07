@@ -41,7 +41,8 @@ python generate_data.py
 * **Blank genders**: 30
 
 
-Customer cleaning result
+Customer cleaning result:
+
 Missing ages count: 0 (Expected: 0)
 Minimum age: 18.0, Maximum age: 60.0 (Expected: between 18 and 60)
 
@@ -61,4 +62,17 @@ female     610
 male       560
 unknown     30
 Name: count, dtype: int64
+=================================================================
+
+Order cleaning result :
+
+Total rows: 12309 (Expected: 12309)
+Status counts:
+status
+completed    11110
+cancelled     1199
+Name: count, dtype: int64
+Pending rows count: 0 (Expected: 0)
+Missing order amounts: 0 (Expected: 0)
+Completed orders amount sum: INR 2,998,668.80 (Expected: INR 2,998,668.80)
 =================================================================
