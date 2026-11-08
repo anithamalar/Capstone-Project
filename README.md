@@ -294,3 +294,14 @@ Cluster 3 -> Name: 'At-Risk / Lapsed' | Size: 182 customers | Premium: False
 PC1: 0.634 | PC2: 0.218 | Total Explained Variance: 0.852
 
 -> Final customer segments successfully saved to data/clean\customer_segments.csv (1175 records)
+
+
+Loading orders and customers datasets...
+Total customers in cohort (at least 1 completed order before cutoff): 1156
+Lapsed customers: 443 (38.32%)
+
+Training rows: 924 | Test rows: 232
+
+--- Baseline Model Performance (Always 'Not Lapsed') ---
+Accuracy: 61.6%
+Lapsed-Class F1 Score: 0.0000
