@@ -245,3 +245,18 @@ This dataset captures Instamart's transactional, customer, and product operation
 The distribution of completed order amounts is heavily right-skewed (skewness ~4.61), with a mean of INR 269.91 but a median of INR 135.00, driven by a long tail of high-value basket sizes. Using the interquartile range method, an upper fence of INR 645.30 identifies 897 high-value order outliers, with zero values below the lower fence. 
 
 Variable correlation analysis across completed orders reveals very weak associations, where the largest absolute correlation (~ -0.095) exists between order amount and discount percentage. This minor negative association does not establish causation. Overall, the data reflects a healthy e-commerce ecosystem characterized by routine small-basket purchases balanced by occasional high-value transactions.
+
+********************************************************PART B***********************************************************************************************
+Loading clean orders and customers datasets...
+Filtering for completed orders only...
+Computing RFM metrics per customer...
+-> RFM table successfully saved to data/clean\rfm_table.csv (1175 customers)
+
+--- Verification Checkpoints ---
+Total Customers with completed orders: 1175 (Expected: 1,175)
+Recency Median: 19 (Expected: 19)
+Recency Min: 0 | Max: 180 (Expected: 0 / 180)
+Frequency Mean: 9.46 | Max: 33 (Expected: 9.46 / 33)
+Monetary Mean: INR 2,552.06 | Max: INR 14,766.55 (Expected: INR 2,552.06 / INR 14,766.55)
+
+
