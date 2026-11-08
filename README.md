@@ -211,3 +211,37 @@ Result Shape: (183, 3)
 ... and 173 more rows.
 
 All SQL queries executed successfully!
+
+Connecting to database for exploratory analysis...
+
+--- 1. Q2 Pivot Table Cross-Check ---
+Pivot table generated successfully! Grand Total: INR 2,998,668.80
+
+--- 2. Order Amount Statistics & Outliers ---
+Mean: 269.91
+Median: 135.00
+Skewness: 4.61
+Q1 (25%): 64.80 | Q3 (75%): 297.00
+1.5x IQR Upper Fence: 645.30
+Outliers above upper fence: 897
+Outliers below lower fence: 0
+
+--- 3. Correlation Matrix ---
+                  order_amount  discount_pct  quantity  delivery_minutes
+order_amount          1.000000     -0.095106  0.087294         -0.003135
+discount_pct         -0.095106      1.000000 -0.000359         -0.009808
+quantity              0.087294     -0.000359  1.000000         -0.012623
+delivery_minutes     -0.003135     -0.009808 -0.012623          1.000000
+
+Largest absolute correlation is between order_amount and discount_pct (~ -0.095).
+Note: A correlation of this small size indicates virtually no linear relationship and does not establish causation.
+
+--- 4. Executive Summary ---
+
+Executive Summary: Instamart Customer Intelligence
+--------------------------------------------------
+This dataset captures Instamart's transactional, customer, and product operations, comprising 12,309 total orders across multiple cities, categories, and customer demographics, with 11,110 successfully completed orders generating a total revenue of INR 2,998,668.80. 
+
+The distribution of completed order amounts is heavily right-skewed (skewness ~4.61), with a mean of INR 269.91 but a median of INR 135.00, driven by a long tail of high-value basket sizes. Using the interquartile range method, an upper fence of INR 645.30 identifies 897 high-value order outliers, with zero values below the lower fence. 
+
+Variable correlation analysis across completed orders reveals very weak associations, where the largest absolute correlation (~ -0.095) exists between order amount and discount percentage. This minor negative association does not establish causation. Overall, the data reflects a healthy e-commerce ecosystem characterized by routine small-basket purchases balanced by occasional high-value transactions.
