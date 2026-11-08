@@ -52,17 +52,27 @@ patterns = [
 ]
 
 redacted_texts = []
+# 2. Apply Task 2 PII Redaction
+patterns = [
+    ("EMAIL", re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")),
+    ("PHONE", re.compile(r"\b[6-9]\d{9}\b")),
+    ("ORDER_ID", re.compile(r"ORD-\d{6}"))
+]
+
+redacted_texts = []
 for text in tickets_df["text"]:
     if pd.isna(text) or not isinstance(text, str):
         redacted_texts.append("")
         continue
+    
     current_text = text
-    for _, pattern in patterns:
-        current_text = pattern.sub(r"[\1]" if _=="EMAIL" else f"[{_}]", current_text) # simplified substitution
-    # Exact substitution logic from Task 2
-    curr = text
-    curr, _ = patterns[0][1].subn("[EMAIL]", curr)
-    curr, _ = patterns[1][1].subn("[PHONE]", curr)
+    current_text, _ = patterns[0][1].subn("[EMAIL]", current_text)
+    current_text, _ = patterns[1][1].subn("[PHONE]", current_text)
+    current_text, _ = patterns[2][1].subn("[ORDER_ID]", current_text)
+    
+    redacted_texts.append(current_text)
+
+tickets_df["redacted_text"] = redacted_texts
     curr, _ = patterns[2][1].subn("[ORDER_ID]", curr)
     redacted_texts.append(curr)
 
