@@ -445,3 +445,16 @@ Name: count, dtype: int64
 
 Verification -> Empty tickets: 4 (Expected: 4)
 Verification -> Flagged long tickets: 4 (Expected: 4)
+
+Task 2:
+
+Loading support tickets from data/raw\tickets.csv...
+
+--- Task 2 PII Redaction Summary ---
+Emails redacted:   55 (Expected: 55)
+Phones redacted:   91 (Expected: 91)
+Order IDs redacted: 132 (Expected: 132)
+Total substitutions: 278 (Expected: 278)
+
+Residual PII matches found after redaction: 0 (Expected: 0)
+-> Confirmed: Re-applying regex patterns finds nothing left.
