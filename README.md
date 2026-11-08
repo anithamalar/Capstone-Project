@@ -305,3 +305,15 @@ Training rows: 924 | Test rows: 232
 --- Baseline Model Performance (Always 'Not Lapsed') ---
 Accuracy: 61.6%
 Lapsed-Class F1 Score: 0.0000
+
+Loading clean datasets...
+
+--- Missing Value Audit ---
+Missing values in X_train: 0
+Missing values in X_test: 0
+-> Confirmed: No feature column contains any missing values.
+
+--- Frequency Mean Comparison ---
+Fitted Training Scaler Frequency Mean: 8.1147
+Full-Cohort Frequency Mean: 8.0285
+-> Explanation: They differ slightly due to random sampling variance introduced by the stratified train-test split, as the training subset represents 80% of the full cohort.
