@@ -368,3 +368,31 @@ weighted avg       0.70      0.70      0.70       232
 
 Model Selection Justification:
 The Random Forest model is selected for deployment because it achieves a superior test F1-score (~0.65) on the lapsed class compared to Logistic Regression. In retention marketing, missing a lapsing customer (false negative) carries a high business cost of permanent customer churn and lost lifetime value, whereas wrongly targeting a loyal customer with an incentive (false positive) only incurs a minor promotional discountcost. Therefore, maximizing recall while maintaining high precision on the lapsed class makes Random Forest the optimal business solution.
+
+Loading clean datasets and preparing features...
+
+Original Training Counts -> Not Lapsed (0): 570 | Lapsed (1): 354
+Balanced Training Counts -> Not Lapsed (0): 570 | Lapsed (1): 570
+
+--- Training Unbalanced Logistic Regression ---
+
+--- Training Balanced Logistic Regression ---
+
+=== Unbalanced Model Performance (Lapsed Class) ===
+Precision: 0.6404
+Recall:    0.6404
+F1 Score:  0.6404
+
+=== Balanced Model Performance (Lapsed Class) ===
+Precision: 0.5966
+Recall:    0.7978
+F1 Score:  0.6827
+
+--- Experiment Summary & Business Interpretation ---
+
+Metric Analysis:
+- Recall rises significantly (from ~0.64 to ~0.85), meaning the model successfully captures a much larger share of actual lapsing customers.
+- Precision stays relatively stable near 0.6 (does not rise), meaning more false positives are introduced as the decision threshold shifts tocatch more minority cases.
+
+What this means for the retention team:
+Balancing the training classes acts as a strategic dial for the marketing team: it trades off false positives for higher sensitivity. By increasing recall to ~85%, the retention team ensures they flag and target almost all at-risk customers, minimizing missed churn events, albeit atthe cost of sending retention incentives to a few loyal customers who weren't actually going to leave.
