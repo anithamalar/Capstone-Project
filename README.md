@@ -273,3 +273,24 @@ Loading RFM data from data/clean/rfm_table.csv...
 
 Selected Optimal K: 4 (Optimal balance of silhouette score and business interpretability)
 
+Loading RFM data from data/clean/rfm_table.csv...
+
+--- (a) Segment Profiles ---
+           recency         frequency        monetary         
+             count    mean     count   mean    count     mean
+segment_id                                                   
+0              436   28.86       436   3.77      436  1057.62
+1              138   24.12       138   6.77      138  7129.70
+2              419    8.77       419  19.40      419  3410.02
+3              182  109.04       182   2.20      182   685.99
+
+--- (b) Segment Business Names & Premium Status Assigned ---
+Cluster 0 -> Name: 'Recent Starters' | Size: 436 customers | Premium: False
+Cluster 1 -> Name: 'Champions & VIPs' | Size: 138 customers | Premium: True
+Cluster 2 -> Name: 'Loyal Regulars' | Size: 419 customers | Premium: False
+Cluster 3 -> Name: 'At-Risk / Lapsed' | Size: 182 customers | Premium: False
+
+--- (c) PCA Explained Variance Ratio ---
+PC1: 0.634 | PC2: 0.218 | Total Explained Variance: 0.852
+
+-> Final customer segments successfully saved to data/clean\customer_segments.csv (1175 records)
