@@ -16,8 +16,8 @@ print("✓ Checkpoint 1 Passed: Total orders = 12,309")
 assert (orders["status"] == "pending").sum() == 0
 print("✓ Checkpoint 2 Passed: Pending orders = 0")
 
-assert (orders["status"] == "completed").sum() == 1110
-print("✓ Checkpoint 3 Passed: Completed orders = 1,110")
+assert (orders["status"] == "completed").sum() == 11110
+print("✓ Checkpoint 3 Passed: Completed orders = 11,110")
 
 assert (orders["status"] == "cancelled").sum() == 1199
 print("✓ Checkpoint 4 Passed: Cancelled orders = 1,199")
