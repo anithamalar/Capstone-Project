@@ -1,24 +1,25 @@
-import os
 import sqlite3
 import pandas as pd
+
+print("SCRIPT HAS STARTED SUCCESSFULLY")
 
 DB_PATH = "data/instamart.db"
 conn = sqlite3.connect(DB_PATH)
 
-print("Running Q1 to Q7 SQL Analysis...\n")
+# Let's run Q1 explicitly to test
+q1 = """
+SELECT c.customer_id, c.name, SUM(o.order_amount) AS total_spend
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+WHERE o.status = 'completed'
+GROUP BY c.customer_id, c.name
+HAVING COUNT(o.order_id) > 500 AND SUM(o.order_amount) > 8000;
+"""
 
-with open("sql/queries.sql", "r") as f:
-    sql_script = f.read()
-
-# Split individual queries by semicolon
-queries = [q.strip() for q in sql_script.split(";") if q.strip()]
-
-for i, query in enumerate(queries, 1):
-    print(f"==================== Q{i} RESULTS ====================")
-    df = pd.read_sql_query(query, conn)
-    print(f"Total Rows Returned: {len(df)}")
-    print(df.head(5))
-    print("=" * 55 + "\n")
+print("Executing Q1...")
+df_q1 = pd.read_sql_query(q1, conn)
+print(f"Q1 Results Count: {len(df_q1)}")
+print(df_q1.head())
 
 conn.close()
-print("-> All SQL queries executed and displayed successfully!")
+print("SCRIPT FINISHED SUCCESSFULLY")
