@@ -427,3 +427,21 @@ Number of customers in top list who truly lapsed: 1 out of 10
 
 --- Limitation Note ---
 Limitation Statement: The Premium flag comes from the whole-window RFM of task 3, which includes the September window that defines the lapse label, so it is a post-hoc whole-window label; thus, this retention list is illustrative and not a leakage-free evaluation.
+
+
+**********************************PART - C*************************************************************************************************************
+
+Task 1:
+
+Loading support tickets from data/raw\tickets.csv...
+Total tickets loaded: 164
+
+--- Task 1 Guardrail Summary ---
+guardrail_status
+valid            156
+skipped_empty      4
+flagged_long       4
+Name: count, dtype: int64
+
+Verification -> Empty tickets: 4 (Expected: 4)
+Verification -> Flagged long tickets: 4 (Expected: 4)
