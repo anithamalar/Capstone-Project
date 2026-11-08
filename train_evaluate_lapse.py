@@ -9,7 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import confusion_matrix, classification_report, f1_score, accuracy_score
 
-# 1. Load clean datasets & rebuild features (same pipeline as Task 5)
+# 1. Load clean datasets & rebuild features
 CLEAN_DIR = "data/clean"
 print("Loading clean datasets and preparing features...")
 orders = pd.read_csv(os.path.join(CLEAN_DIR, "orders.csv"))
@@ -154,7 +154,6 @@ for name, model in [("Logistic Regression", lr_grid), ("Random Forest", rf_grid)
     y_pred = model.predict(X_test)
     cm = confusion_matrix(y_test, y_pred)
     f1_lapsed = f1_score(y_test, y_pred, pos_label=1, zero_division=0)
-    report = classification_report(y_test, y_pred, target_data_type=None, zero_division=0)
     
     print(f"\nModel: {name}")
     print(f"Confusion Matrix:\n{cm}")
@@ -164,5 +163,5 @@ for name, model in [("Logistic Regression", lr_grid), ("Random Forest", rf_grid)
 print("\n--- Model Justification & Business Trade-off ---")
 print("""
 Model Selection Justification:
-The Random Forest model is selected for deployment because it achieves a superior test F1-score (~0.65) on the lapsed class compared to Logistic Regression. In retention marketing, missing a lapsing customer (false negative) carries a high business cost of permanent customer churn and lost lifetime value, whereas wrongly targeting a loyal customer with an incentive (false positive) only incurs a minor promotional discount cost. Therefore, maximizing recall while maintaining high precision on the lapsed class makes Random Forest the optimal business solution.
+The Random Forest model is selected for deployment because it achieves a superior test F1-score on the lapsed class compared to Logistic Regression. In retention marketing, missing a lapsing customer (false negative) carries a high business cost of permanent customer churn and lost lifetime value, whereas wrongly targeting a loyal customer with an incentive (false positive) only incurs a minor promotional discount cost. Therefore, maximizing recall while maintaining high precision on the lapsed class makes Random Forest the optimal business solution.
 """)
