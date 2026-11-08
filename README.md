@@ -76,3 +76,15 @@ Pending rows count: 0 (Expected: 0)
 Missing order amounts: 0 (Expected: 0)
 Completed orders amount sum: INR 2,998,668.80 (Expected: INR 2,998,668.80)
 =================================================================
+
+Running validation script against SQLite database...
+✓ Checkpoint 1 Passed: Total orders = 12,309
+✓ Checkpoint 2 Passed: Pending orders = 0
+✓ Checkpoint 3 Passed: Completed orders = 11,110
+✓ Checkpoint 4 Passed: Cancelled orders = 1,199
+✓ Checkpoint 5 Passed: Missing order amounts = 0
+✓ Checkpoint 6 Passed: Completed revenue sum matches INR 2,998,668.80
+✓ Checkpoint 7 Passed: Missing customer ages = 0
+✓ Checkpoint 8 Passed: Customer ages bounded between 18 and 60
+
+ALL CHECKPOINTS PASSED
