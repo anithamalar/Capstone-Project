@@ -259,4 +259,17 @@ Recency Min: 0 | Max: 180 (Expected: 0 / 180)
 Frequency Mean: 9.46 | Max: 33 (Expected: 9.46 / 33)
 Monetary Mean: INR 2,552.06 | Max: INR 14,766.55 (Expected: INR 2,552.06 / INR 14,766.55)
 
+Loading RFM data from data/clean/rfm_table.csv...
+
+--- K-Means Evaluation (K = 2 to 8) ---
+ K  Inertia  Silhouette Score
+ 2   1820.8             0.465
+ 3   1268.2             0.445
+ 4    743.1             0.526
+ 5    617.4             0.480
+ 6    503.2             0.482
+ 7    408.5             0.416
+ 8    366.5             0.412
+
+Selected Optimal K: 4 (Optimal balance of silhouette score and business interpretability)
 
