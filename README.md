@@ -458,3 +458,16 @@ Total substitutions: 278 (Expected: 278)
 
 Residual PII matches found after redaction: 0 (Expected: 0)
 -> Confirmed: Re-applying regex patterns finds nothing left.
+
+Task 3:
+
+--- Task 3 Prompt Verification ---
+1. Zero-Shot Prompt Defined Successfully.
+   - Contains 'CLASSIFY': True
+   - Contains 'EXAMPLES:': False
+
+2. Few-Shot Prompt Defined Successfully.
+   - Contains 'CLASSIFY': True
+   - Contains 'EXAMPLES:': True
+
+Prompts saved to outputs/prompts.json successfully!
