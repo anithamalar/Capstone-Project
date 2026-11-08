@@ -396,3 +396,34 @@ Metric Analysis:
 
 What this means for the retention team:
 Balancing the training classes acts as a strategic dial for the marketing team: it trades off false positives for higher sensitivity. By increasing recall to ~85%, the retention team ensures they flag and target almost all at-risk customers, minimizing missed churn events, albeit atthe cost of sending retention incentives to a few loyal customers who weren't actually going to leave.
+
+Task-8
+
+Loading clean datasets and preparing features...
+
+--- (a) Model Interpretation ---
+Top 5 Random Forest Features:
+  1. frequency: 0.2572
+  2. monetary: 0.2564
+  3. recency: 0.1099
+  4. average_delivery_minutes: 0.0704
+  5. average_discount_pct: 0.0619
+
+Business Reading (Random Forest): Recency is overwhelmingly the dominant predictor, confirming that days elapsed since the last order is the primary indicator of customer lapse.
+
+Logistic Regression Feature Coefficients (Sample of 3):
+  - recency: 0.0495 (Positive (+))
+  - frequency: -1.6126 (Negative (-))
+  - cancellation_rate: -0.1364 (Negative (-))
+Business Reading (Logistic Regression): Recency has a positive coefficient (longer absence increases lapse risk), while frequency has a negative coefficient (higher past order counts protect against lapsing).
+
+--- (b) Model Persistence & Verification ---
+Model saved to outputs\lapse_model.joblib
+Reloaded model predictions match original test predictions exactly: True
+
+--- (c) Premium Customer Retention List ---
+Top retention list saved to outputs\retention_list.csv (10 customers)
+Number of customers in top list who truly lapsed: 1 out of 10
+
+--- Limitation Note ---
+Limitation Statement: The Premium flag comes from the whole-window RFM of task 3, which includes the September window that defines the lapse label, so it is a post-hoc whole-window label; thus, this retention list is illustrative and not a leakage-free evaluation.
