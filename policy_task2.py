@@ -67,5 +67,5 @@ if __name__ == "__main__":
     top_chunks = retrieve(test_query, k=3)
     
     for rank, res in enumerate(top_chunks, 1):
-        print(f"\nRank {rank}: [Score: {res['score']:.4f}]}]")
+        print(f"\nRank {rank}: [Score: {res['score']:.4f}] ({res['source']})")
         print(f"Text: {res['text']}")
