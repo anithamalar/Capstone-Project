@@ -429,6 +429,7 @@ Number of customers in top list who truly lapsed: 1 out of 10
 Limitation Statement: The Premium flag comes from the whole-window RFM of task 3, which includes the September window that defines the lapse label, so it is a post-hoc whole-window label; thus, this retention list is illustrative and not a leakage-free evaluation.
 
 
+
 **********************************PART - C*************************************************************************************************************
 
 Task 1:
