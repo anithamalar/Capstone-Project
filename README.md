@@ -499,3 +499,14 @@ Processing 156 valid tickets through resilient LLM pipeline...
 [RETRY LOG] Ticket ID: T0065 | Retry #1 | Wait: 0.0467s | Error: 503 server busy
 
 Completed processing. Total successful responses: 156 / 156
+
+Task 5:
+
+Loading support tickets from data/raw\tickets.csv...
+
+--- Running Task 5: Validation & Classification Pipeline ---
+
+--- Task 5 Results Summary ---
+classified_json: 135
+classified_keyword: 12
+flagged_invalid_output: 9
