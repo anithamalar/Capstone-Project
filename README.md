@@ -609,3 +609,39 @@ Overlap 0 (Zero Overlap):
 Sample failures with Overlap 0:
   - Question: What delivery time makes a completed order eligible for a full refund? | Type: fact
   - Question: How soon is money returned when a payment fails but is deducted? | Type: fact
+
+Task 5:
+
+--- Testing Tool Map ---
+Registered Tools: ['get_order', 'search_policy', 'calculate_refund', 'issue_refund', 'escalate_to_human']
+Test get_order('ORD-000001'): {'error': 'order not found'}
+Test calculate_refund(1200.0, 50): {'refund_inr': 1200.0}
+
+Task 6:
+
+Loading scenarios from data/raw/agent_scenarios.csv...
+
+Running S1...
+D:\AM\policy_task6.py:97: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  -> Status: REFUND | LLM Calls: 5 | Tokens: 1107
+
+Running S2...
+  -> Status: REFUND | LLM Calls: 5 | Tokens: 1107
+
+Running S3...
+  -> Status: ESCALATE | LLM Calls: 5 | Tokens: 1094
+
+Running S4...
+  -> Status: DENIED | LLM Calls: 4 | Tokens: 773
+
+Running S5...
+  -> Status: NOT_FOUND | LLM Calls: 2 | Tokens: 179
+
+Running S6...
+  -> Status: NOT_FOUND | LLM Calls: 2 | Tokens: 156
+
+Running S7...
+  -> Status: MAX_ITERATIONS | LLM Calls: 6 | Tokens: 3252
+
+Saved all agent runs to outputs\agent_runs.jsonl
