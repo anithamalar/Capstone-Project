@@ -55,9 +55,15 @@ with open("outputs/prompts.json", "r", encoding="utf-8") as f:
 system_prompt = prompts_data["zero_shot"]
 
 def call_llm_with_retry(ticket_id, system_prompt, user_prompt):
+    # Construct messages list as required by mock_llm.chat
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt}
+    ]
+    
     for n in range(MAX_RETRIES + 1):
         try:
-            response = mock_llm.chat(system_prompt, user_prompt)
+            response = mock_llm.chat(messages)
             return response
         except Exception as e:
             if n == MAX_RETRIES:
