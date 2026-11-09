@@ -664,3 +664,20 @@ Scenario S4 -> Status: DENIED | Calls: 4 | Tokens: 773
 Scenario S5 -> Status: NOT_FOUND | Calls: 2 | Tokens: 179
 Scenario S6 -> Status: NOT_FOUND | Calls: 2 | Tokens: 156
 Scenario S7 -> Status: FALLBACK_MAX_ITERATIONS | Calls: 6 | Tokens: 3252
+
+
+Task 8:
+
+--- Part 1: Running S1 with Simulated Crash after 2nd tool execution ---
+Caught expected crash: SIMULATED CRASH: Triggered after step 2 (search_policy)!
+
+--- Part 2: Resuming S1 using resume_agent() ---
+Resuming run 'demo_run_s1' (Scenario: S1) from step 2...
+Already executed tools: ['get_order', 'search_policy']
+D:\AM\policy_task8.py:99: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+
+Resumed Run Final Status: REFUND
+Final Answer:
+REFUND: INR 128.25 issued.
+All Tools Executed Across Crash & Resume: ['get_order', 'search_policy', 'calculate_refund', 'issue_refund']
