@@ -530,3 +530,13 @@ fraud        |         23 |          0 |          0 |         11
 technical    |          0 |         29 |          0 |         10
 delivery     |          0 |          0 |         36 |          0
 billing      |          0 |          0 |          0 |         38
+
+Task 7:
+
+Loading support tickets from data/raw\tickets.csv...
+
+--- Running Task 7(a): Zero-Shot Budget Demo (Budget=6000) ---
+Saved budget demo results to outputs\triage_budget_demo.csv. Tickets budget_exhausted: 87
+
+--- Running Task 7(b): Few-Shot Final Routing (Budget=100000) ---
+Saved final triage results to outputs\triage_results.csv
