@@ -566,3 +566,15 @@ Text: of INR 25 is charged on orders below INR 199, and delivery is free on orde
 [Chunk 3] Source: delivery_policy.txt
 Text: 60 minutes and the app shows a rain notice. A rider will attempt to contact the customer twice befor...
 
+Task 2:
+
+--- Running Retrieval for Query: 'refund policy late delivery' ---
+
+Rank 1: [Score: 0.2719] (refund_policy.txt)
+Text: order is delivered in more than 45 minutes, the customer receives a full refund of the order amount. If a completed order is delivered in 45 minutes or less, no late-delivery refund is paid. Refunds up to INR 1000 are
+
+Rank 2: [Score: 0.2514] (refund_policy.txt)
+Text: Refund Policy. A refund can be requested only for orders whose status is completed. Orders with status cancelled were never charged, so no refund applies to them. If a completed order is delivered in more than 45 minutes, the customer
+
+Rank 3: [Score: 0.2454] (refund_policy.txt)
+Text: late-delivery refund is paid. Refunds up to INR 1000 are approved automatically by the support system. A refund above INR 1000 must be approved by a human support lead before money is returned. Approved refunds are credited to the original
