@@ -471,3 +471,31 @@ Task 3:
    - Contains 'EXAMPLES:': True
 
 Prompts saved to outputs/prompts.json successfully!
+
+Task 4:
+
+Loading support tickets from data/raw\tickets.csv...
+
+--- Resetting Mock LLM & Starting Full Run ---
+Processing 156 valid tickets through resilient LLM pipeline...
+[RETRY LOG] Ticket ID: T0002 | Retry #1 | Wait: 0.0463s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0116 | Retry #1 | Wait: 0.0526s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0153 | Retry #1 | Wait: 0.0543s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0039 | Retry #1 | Wait: 0.0497s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0152 | Retry #1 | Wait: 0.0505s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0043 | Retry #1 | Wait: 0.0453s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0111 | Retry #1 | Wait: 0.0484s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0155 | Retry #1 | Wait: 0.0458s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0100 | Retry #1 | Wait: 0.0502s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0068 | Retry #1 | Wait: 0.0457s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0135 | Retry #1 | Wait: 0.0535s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0009 | Retry #1 | Wait: 0.0459s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0067 | Retry #1 | Wait: 0.0536s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0106 | Retry #1 | Wait: 0.0504s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0097 | Retry #1 | Wait: 0.0483s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0003 | Retry #1 | Wait: 0.0520s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0019 | Retry #1 | Wait: 0.0511s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0086 | Retry #1 | Wait: 0.0508s | Error: 503 server busy
+[RETRY LOG] Ticket ID: T0065 | Retry #1 | Wait: 0.0467s | Error: 503 server busy
+
+Completed processing. Total successful responses: 156 / 156
