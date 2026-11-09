@@ -510,3 +510,23 @@ Loading support tickets from data/raw\tickets.csv...
 classified_json: 135
 classified_keyword: 12
 flagged_invalid_output: 9
+
+Task 6:
+
+Loading support tickets from data/raw\tickets.csv...
+
+--- Running Zero-Shot Pipeline ---
+
+--- Running Few-Shot Pipeline ---
+
+================ REPORT ================
+Zero-Shot -> Classified: 147, Accuracy: 85.71%, Total Tokens: 13612, Tokens/Ticket: 92.60
+Few-Shot  -> Classified: 147, Accuracy: 100.00%, Total Tokens: 30772, Tokens/Ticket: 209.33
+
+--- Zero-Shot Confusion Matrix (True vs Predicted) ---
+True \ Pred  |      fraud |  technical |   delivery |    billing
+------------------------------------------------------------
+fraud        |         23 |          0 |          0 |         11
+technical    |          0 |         29 |          0 |         10
+delivery     |          0 |          0 |         36 |          0
+billing      |          0 |          0 |          0 |         38
