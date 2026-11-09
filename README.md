@@ -578,3 +578,14 @@ Text: Refund Policy. A refund can be requested only for orders whose status is c
 
 Rank 3: [Score: 0.2454] (refund_policy.txt)
 Text: late-delivery refund is paid. Refunds up to INR 1000 are approved automatically by the support system. A refund above INR 1000 must be approved by a human support lead before money is returned. Approved refunds are credited to the original
+
+Task 3:
+
+--- Asking Question: 'What is the policy for a late delivery refund?' ---
+
+Model Response:
+Refunds up to INR 1000 are
+ 
+Refund Policy.
+
+Sources Used: ['refund_policy.txt']
