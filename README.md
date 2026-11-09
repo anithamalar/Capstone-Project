@@ -681,3 +681,32 @@ Resumed Run Final Status: REFUND
 Final Answer:
 REFUND: INR 128.25 issued.
 All Tools Executed Across Crash & Resume: ['get_order', 'search_policy', 'calculate_refund', 'issue_refund']
+
+
+Task 9:
+
+==========================================
+Starting Part D Master Pipeline Execution
+==========================================
+D:\AM\part_d_pipeline.py:104: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+Completed S1 -> Status: REFUND | Calls: 5 | Tokens: 1107
+Completed S2 -> Status: REFUND | Calls: 5 | Tokens: 1107
+Completed S3 -> Status: ESCALATE | Calls: 5 | Tokens: 1094
+Completed S4 -> Status: DENIED | Calls: 4 | Tokens: 773
+Completed S5 -> Status: NOT_FOUND | Calls: 2 | Tokens: 179
+Completed S6 -> Status: NOT_FOUND | Calls: 2 | Tokens: 156
+Completed S7 -> Status: FALLBACK_MAX_ITERATIONS | Calls: 6 | Tokens: 3252
+
+==========================================
+Part D Summary Table (for README):
+==========================================
+| Scenario ID   | Status                  | Refund Amount   |   Model Calls |   Tokens Used |
+|:--------------|:------------------------|:----------------|--------------:|--------------:|
+| S1            | REFUND                  | INR 128.25      |             5 |          1107 |
+| S2            | REFUND                  | INR 135.0       |             5 |          1107 |
+| S3            | ESCALATE                | INR 1000.0      |             5 |          1094 |
+| S4            | DENIED                  | N/A             |             4 |           773 |
+| S5            | NOT_FOUND               | N/A             |             2 |           179 |
+| S6            | NOT_FOUND               | N/A             |             2 |           156 |
+| S7            | FALLBACK_MAX_ITERATIONS | N/A             |             6 |          3252 |
