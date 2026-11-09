@@ -540,3 +540,28 @@ Saved budget demo results to outputs\triage_budget_demo.csv. Tickets budget_exha
 
 --- Running Task 7(b): Few-Shot Final Routing (Budget=100000) ---
 Saved final triage results to outputs\triage_results.csv
+
+****************************************************************** PART D ***************************************************************************************************************************************************
+
+Task 1:
+
+--- Processing Policy Documents & Chunking ---
+
+Total chunks created: 15
+Breakdown by file:
+  - delivery_policy.txt: 3 chunks
+  - escalation_policy.txt: 3 chunks
+  - payment_policy.txt: 3 chunks
+  - privacy_policy.txt: 2 chunks
+  - refund_policy.txt: 4 chunks
+
+--- Sample Chunks Preview ---
+
+[Chunk 1] Source: delivery_policy.txt
+Text: Delivery Policy. Standard delivery is promised within 30 minutes of order confirmation in all suppor...
+
+[Chunk 2] Source: delivery_policy.txt
+Text: of INR 25 is charged on orders below INR 199, and delivery is free on orders of INR 199 or more. Dur...
+
+[Chunk 3] Source: delivery_policy.txt
+Text: 60 minutes and the app shows a rain notice. A rider will attempt to contact the customer twice befor... 
