@@ -291,7 +291,30 @@ if __name__ == "__main__":
         refund_amt = "N/A"
         if "REFUND" in res["status"] or "ESCALATE" in res["status"]:
             try:
-                # parse amount from final answer text
+               # ==========================================
+# 4. EXECUTE ALL SCENARIOS & GENERATE REPORT
+# ==========================================
+if __name__ == "__main__":
+    print("==========================================")
+    print("Starting Part D Master Pipeline Execution")
+    print("==========================================")
+    
+    if os.path.exists(RUNS_JSONL_PATH):
+        os.remove(RUNS_JSONL_PATH)
+        
+    scenarios_df = pd.read_csv(SCENARIOS_FILE)
+    summary_rows = []
+    
+    for _, row in scenarios_df.iterrows():
+        sid = row["scenario_id"]
+        msg = row["message"]
+        
+        res = run_agent_master(msg, sid, run_id=f"run_{sid.lower()}")
+        
+        # Extract refund amount from final answer if present
+        refund_amt = "N/A"
+        if "REFUND" in res["status"] or "ESCALATE" in res["status"]:
+            try:
                 parts = res["final_answer"].split()
                 for p in parts:
                     try:
@@ -318,5 +341,10 @@ if __name__ == "__main__":
     print("\n==========================================")
     print("Part D Summary Table (for README):")
     print("==========================================")
-    summary_df = pd.DataFrame(summary_rows)
-    print(summary_df.to_markdown(index=False))
+    
+    # Custom markdown table printer (No 'tabulate' dependency required)
+    headers = ["Scenario ID", "Status", "Refund Amount", "Model Calls", "Tokens Used"]
+    print("| " + " | ".join(headers) + " |")
+    print("|" + "|----" * len(headers) + "|")
+    for row in summary_rows:
+        print(f"| {row['Scenario ID']} | {row['Status']} | {row['Refund Amount']} | {row['Model Calls']} | {row['Tokens Used']} |")
