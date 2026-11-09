@@ -589,3 +589,23 @@ Refunds up to INR 1000 are
 Refund Policy.
 
 Sources Used: ['refund_policy.txt']
+
+Task 4:
+
+--- Evaluating with Overlap = 10 ---
+--- Evaluating with Overlap = 0 ---
+
+================ TASK 4 EVALUATION REPORT ================
+Overlap 10 (Reference Standard):
+  - Answerable Expected Doc Found in Top 3: 12 / 12
+  - Answerable Expected Fact Present: 12 / 12
+  - Unanswerable Fallback Triggered: 0 / 2
+
+Overlap 0 (Zero Overlap):
+  - Answerable Expected Doc Found in Top 3: 12 / 12
+  - Answerable Expected Fact Present: 10 / 12
+  - Unanswerable Fallback Triggered: 0 / 2
+
+Sample failures with Overlap 0:
+  - Question: What delivery time makes a completed order eligible for a full refund? | Type: fact
+  - Question: How soon is money returned when a payment fails but is deducted? | Type: fact
