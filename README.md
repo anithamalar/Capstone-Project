@@ -645,3 +645,22 @@ Running S7...
   -> Status: MAX_ITERATIONS | LLM Calls: 6 | Tokens: 3252
 
 Saved all agent runs to outputs\agent_runs.jsonl
+
+Task 7:
+
+--- Running S1 Demo with token_limit=200 ---
+S1 Token Limit Demo Status: FALLBACK_TOKEN_LIMIT | Tokens Used: 480
+
+--- Running S1 Demo with time_limit_seconds=0 ---
+S1 Timeout Demo Status: FALLBACK_TIMEOUT | Final Answer: FALLBACK_TIMEOUT: Run exceeded time limit of 0s. Handoff to human review required.
+
+--- Running All Scenarios with Default Limits (token_limit=6000) ---
+D:\AM\policy_task7.py:98: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+Scenario S1 -> Status: REFUND | Calls: 5 | Tokens: 1107
+Scenario S2 -> Status: REFUND | Calls: 5 | Tokens: 1107
+Scenario S3 -> Status: ESCALATE | Calls: 5 | Tokens: 1094
+Scenario S4 -> Status: DENIED | Calls: 4 | Tokens: 773
+Scenario S5 -> Status: NOT_FOUND | Calls: 2 | Tokens: 179
+Scenario S6 -> Status: NOT_FOUND | Calls: 2 | Tokens: 156
+Scenario S7 -> Status: FALLBACK_MAX_ITERATIONS | Calls: 6 | Tokens: 3252
